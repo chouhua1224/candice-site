@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+     xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Candice 的頻道</title>
+    <link>https://chouhua1224.github.io/candice-site/</link>
+    <atom:link href="https://chouhua1224.github.io/candice-site/podcast.xml" rel="self" type="application/rss+xml"/>
+    <language>zh-tw</language>
+    <description>一個測試中的 podcast 頻道，之後會換上真正的內容。</description>
+    <itunes:author>Candice</itunes:author>
+    <itunes:summary>一個測試中的 podcast 頻道，之後會換上真正的內容。</itunes:summary>
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:category text="Education"/>
+    <itunes:image href="https://chouhua1224.github.io/candice-site/podcast/cover.jpg"/>
+    <image>
+      <url>https://chouhua1224.github.io/candice-site/podcast/cover.jpg</url>
+      <title>Candice 的頻道</title>
+      <link>https://chouhua1224.github.io/candice-site/</link>
+    </image>
+
+    <item>
+      <title>EP01 · 測試集數</title>
+      <description>證明「文字變語音、變成 podcast 節目」這條流程能跑通的第一集。</description>
+      <pubDate>Sun, 06 Sep 2026 10:45:49 GMT</pubDate>
+      <guid isPermaLink="false">candice-site-podcast-ep001</guid>
+      <enclosure url="https://chouhua1224.github.io/candice-site/podcast/episode-001.mp3" length="119664" type="audio/mpeg"/>
+      <itunes:duration>00:00:20</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+  </channel>
+</rss>

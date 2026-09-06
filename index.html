@@ -174,12 +174,14 @@
     font-size:13px;
     font-family:"JetBrains Mono", ui-monospace, monospace;
   }
-  footer code{
+  code{
+    font-family:"JetBrains Mono", ui-monospace, monospace;
     background:var(--surface-2);
     padding:2px 6px;
     border-radius:5px;
     font-size:12px;
   }
+  audio{ border-radius:8px; }
 
   @media (prefers-reduced-motion: reduce){ *{ transition:none !important; } }
 </style>
@@ -209,6 +211,17 @@
         <p class="meta">Week 3 · 僅示意，非真實課程內容</p>
       </article>
     </div>
+  </section>
+
+  <section aria-labelledby="podcast-heading">
+    <h2 id="podcast-heading">Podcast · 測試版</h2>
+    <article class="preview">
+      <span class="tag">EP01 · 測試集數</span>
+      <h3>證明流程能跑通的第一集</h3>
+      <p>文字先變成語音，再包成一個 podcast 節目——這一集就是這條路已經打通的證明。</p>
+      <audio controls style="width:100%; margin-top:4px;" src="podcast/episode-001.mp3"></audio>
+      <p class="meta">訂閱網址：<code>https://chouhua1224.github.io/candice-site/podcast.xml</code>，貼到任何 podcast App 的「透過網址加入」</p>
+    </article>
   </section>
 
   <footer>
