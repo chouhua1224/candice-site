@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Candice</title>
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,500&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --bg:#F3F2F7;
+    --surface:#FFFFFF;
+    --surface-2:#EAE7F0;
+    --ink:#232136;
+    --muted:#6E6A80;
+    --accent:#8C5383;
+    --accent-ink:#5C3556;
+    --line:#DCD8E6;
+    --dot: color-mix(in srgb, var(--ink) 10%, transparent);
+    --shadow: 0 1px 2px rgba(35,33,54,.06), 0 10px 28px -14px rgba(35,33,54,.22);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#18172333;
+      --bg:#171622;
+      --surface:#1F1E2C;
+      --surface-2:#262536;
+      --ink:#EDEBF3;
+      --muted:#A6A2B8;
+      --accent:#C98BBE;
+      --accent-ink:#E5B7DC;
+      --line:#333243;
+      --dot: color-mix(in srgb, var(--ink) 12%, transparent);
+      --shadow: 0 1px 2px rgba(0,0,0,.35), 0 14px 32px -16px rgba(0,0,0,.6);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#171622;
+    --surface:#1F1E2C;
+    --surface-2:#262536;
+    --ink:#EDEBF3;
+    --muted:#A6A2B8;
+    --accent:#C98BBE;
+    --accent-ink:#E5B7DC;
+    --line:#333243;
+    --dot: color-mix(in srgb, var(--ink) 12%, transparent);
+    --shadow: 0 1px 2px rgba(0,0,0,.35), 0 14px 32px -16px rgba(0,0,0,.6);
+  }
+
+  *{ box-sizing:border-box; }
+  body{
+    margin:0;
+    background:
+      radial-gradient(var(--dot) 1px, transparent 1px) 0 0/22px 22px,
+      var(--bg);
+    color:var(--ink);
+    font-family:"Work Sans", system-ui, -apple-system, "PingFang TC", "Microsoft JhengHei", sans-serif;
+    line-height:1.6;
+  }
+  .wrap{ max-width:760px; margin:0 auto; padding:64px 24px 96px; }
+
+  .eyebrow{
+    font-family:"JetBrains Mono", ui-monospace, monospace;
+    font-size:12.5px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--accent-ink);
+    margin:0 0 16px;
+  }
+  h1{
+    font-family:"Newsreader", Georgia, serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:clamp(36px,6vw,54px);
+    line-height:1.1;
+    margin:0 0 16px;
+    text-wrap:balance;
+  }
+  .lede{
+    color:var(--muted);
+    font-size:16.5px;
+    max-width:52ch;
+    margin:0 0 40px;
+  }
+  .lede strong{ color:var(--ink); font-weight:500; }
+
+  .status{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    font-family:"JetBrains Mono", ui-monospace, monospace;
+    font-size:12.5px;
+    color:var(--muted);
+    background:var(--surface);
+    border:1px solid var(--line);
+    box-shadow:var(--shadow);
+    padding:10px 16px;
+    border-radius:999px;
+    width:fit-content;
+    margin-bottom:56px;
+  }
+  .status::before{
+    content:"";
+    width:8px; height:8px; border-radius:50%;
+    background:#4E9A6B;
+    box-shadow:0 0 0 3px color-mix(in srgb, #4E9A6B 22%, transparent);
+    flex-shrink:0;
+  }
+
+  h2{
+    font-family:"Work Sans", sans-serif;
+    font-weight:600;
+    font-size:13.5px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin:0 0 18px;
+    border-bottom:1px solid var(--line);
+    padding-bottom:10px;
+  }
+  section{ margin-bottom:52px; }
+
+  .previews{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+    gap:16px;
+  }
+  .preview{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:22px;
+    box-shadow:var(--shadow);
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .preview .tag{
+    font-family:"JetBrains Mono", ui-monospace, monospace;
+    font-size:11px;
+    letter-spacing:.04em;
+    color:var(--accent-ink);
+    background:color-mix(in srgb, var(--accent) 14%, var(--surface));
+    padding:3px 10px;
+    border-radius:999px;
+    width:fit-content;
+  }
+  .preview h3{
+    font-family:"Newsreader", Georgia, serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:20px;
+    margin:0;
+  }
+  .preview p{
+    margin:0;
+    color:var(--muted);
+    font-size:14.5px;
+  }
+  .preview .meta{
+    font-family:"JetBrains Mono", ui-monospace, monospace;
+    font-size:11.5px;
+    color:var(--muted);
+    border-top:1px dashed var(--line);
+    padding-top:12px;
+    margin-top:auto;
+  }
+
+  footer{
+    border-top:1px solid var(--line);
+    padding-top:22px;
+    color:var(--muted);
+    font-size:13px;
+    font-family:"JetBrains Mono", ui-monospace, monospace;
+  }
+  footer code{
+    background:var(--surface-2);
+    padding:2px 6px;
+    border-radius:5px;
+    font-size:12px;
+  }
+
+  @media (prefers-reduced-motion: reduce){ *{ transition:none !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <p class="eyebrow">candice.個人網站 · 測試版</p>
+  <h1>這裡是 Candice 的地方</h1>
+  <p class="lede">這個網頁還沒決定好正式要做什麼——可能是<strong>日記</strong>，可能是<strong>教材</strong>，可能兩者都是。先把「網站蓋得起來、外面也連得到」這件事確認好，之後內容隨時可以換。</p>
+
+  <p class="status">正式上線 · 手機、其他電腦都能打開這個網址</p>
+
+  <section aria-labelledby="preview-heading">
+    <h2 id="preview-heading">之後可能長這樣</h2>
+    <div class="previews">
+      <article class="preview">
+        <span class="tag">如果拿來寫日記</span>
+        <h3>9 月的第一場雨</h3>
+        <p>今天終於把工作台架起來了，感覺像是把腦袋裡亂亂的東西找到一個地方放。</p>
+        <p class="meta">2026-09-06 · 僅示意，非真實日記內容</p>
+      </article>
+      <article class="preview">
+        <span class="tag">如果拿來放教材</span>
+        <h3>第三週：函式與模組</h3>
+        <p>這週的重點是把重複的程式碼包成函式。附件裡有練習題，交作業請填下面的表單。</p>
+        <p class="meta">Week 3 · 僅示意，非真實課程內容</p>
+      </article>
+    </div>
+  </section>
+
+  <footer>
+    這個頁面放在 <code>github.com/chouhua1224/candice-site</code>，由 GitHub Pages 對外提供服務，不需要這台電腦開機。想換內容的時候，改這個 repo 裡的檔案、推上去就會自動更新。
+  </footer>
+
+</div>
+</body>
+</html>
