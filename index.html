@@ -6,227 +6,151 @@
 <title>Candice</title>
 <link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,500&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,500&family=Work+Sans:wght@400;500;600&display=swap">
 <style>
   :root{
-    --bg:#F3F2F7;
-    --surface:#FFFFFF;
-    --surface-2:#EAE7F0;
-    --ink:#232136;
-    --muted:#6E6A80;
-    --accent:#8C5383;
-    --accent-ink:#5C3556;
+    --bg:#F3F2F7; --surface:#FFFFFF; --surface-2:#EAE7F0;
+    --ink:#232136; --muted:#6E6A80; --accent:#8C5383; --accent-ink:#5C3556;
     --line:#DCD8E6;
-    --dot: color-mix(in srgb, var(--ink) 10%, transparent);
     --shadow: 0 1px 2px rgba(35,33,54,.06), 0 10px 28px -14px rgba(35,33,54,.22);
   }
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
-      --bg:#18172333;
-      --bg:#171622;
-      --surface:#1F1E2C;
-      --surface-2:#262536;
-      --ink:#EDEBF3;
-      --muted:#A6A2B8;
-      --accent:#C98BBE;
-      --accent-ink:#E5B7DC;
+      --bg:#171622; --surface:#1F1E2C; --surface-2:#262536;
+      --ink:#EDEBF3; --muted:#A6A2B8; --accent:#C98BBE; --accent-ink:#E5B7DC;
       --line:#333243;
-      --dot: color-mix(in srgb, var(--ink) 12%, transparent);
-      --shadow: 0 1px 2px rgba(0,0,0,.35), 0 14px 32px -16px rgba(0,0,0,.6);
+      --shadow: 0 1px 2px rgba(0,0,0,.35), 0 12px 30px -16px rgba(0,0,0,.6);
     }
   }
-  :root[data-theme="dark"]{
-    --bg:#171622;
-    --surface:#1F1E2C;
-    --surface-2:#262536;
-    --ink:#EDEBF3;
-    --muted:#A6A2B8;
-    --accent:#C98BBE;
-    --accent-ink:#E5B7DC;
-    --line:#333243;
-    --dot: color-mix(in srgb, var(--ink) 12%, transparent);
-    --shadow: 0 1px 2px rgba(0,0,0,.35), 0 14px 32px -16px rgba(0,0,0,.6);
-  }
-
-  *{ box-sizing:border-box; }
+  *{box-sizing:border-box}
   body{
-    margin:0;
-    background:
-      radial-gradient(var(--dot) 1px, transparent 1px) 0 0/22px 22px,
-      var(--bg);
-    color:var(--ink);
-    font-family:"Work Sans", system-ui, -apple-system, "PingFang TC", "Microsoft JhengHei", sans-serif;
-    line-height:1.6;
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:"Work Sans","PingFang TC","Heiti TC",system-ui,sans-serif;
+    line-height:1.7; -webkit-font-smoothing:antialiased;
   }
-  .wrap{ max-width:760px; margin:0 auto; padding:64px 24px 96px; }
-
-  .eyebrow{
-    font-family:"JetBrains Mono", ui-monospace, monospace;
-    font-size:12.5px;
-    letter-spacing:.12em;
-    text-transform:uppercase;
-    color:var(--accent-ink);
-    margin:0 0 16px;
-  }
+  .wrap{max-width:760px;margin:0 auto;padding:44px 20px 72px}
+  header{margin-bottom:34px}
   h1{
-    font-family:"Newsreader", Georgia, serif;
-    font-style:italic;
-    font-weight:500;
-    font-size:clamp(36px,6vw,54px);
-    line-height:1.1;
-    margin:0 0 16px;
-    text-wrap:balance;
+    font-family:"Newsreader",Georgia,serif; font-weight:500; font-size:40px;
+    letter-spacing:.5px; margin:0 0 6px;
   }
-  .lede{
-    color:var(--muted);
-    font-size:16.5px;
-    max-width:52ch;
-    margin:0 0 40px;
-  }
-  .lede strong{ color:var(--ink); font-weight:500; }
-
-  .status{
-    display:flex;
-    align-items:center;
-    gap:9px;
-    font-family:"JetBrains Mono", ui-monospace, monospace;
-    font-size:12.5px;
-    color:var(--muted);
-    background:var(--surface);
-    border:1px solid var(--line);
-    box-shadow:var(--shadow);
-    padding:10px 16px;
-    border-radius:999px;
-    width:fit-content;
-    margin-bottom:56px;
-  }
-  .status::before{
-    content:"";
-    width:8px; height:8px; border-radius:50%;
-    background:#4E9A6B;
-    box-shadow:0 0 0 3px color-mix(in srgb, #4E9A6B 22%, transparent);
-    flex-shrink:0;
-  }
-
+  .tag{color:var(--muted);font-size:14px}
   h2{
-    font-family:"Work Sans", sans-serif;
-    font-weight:600;
-    font-size:13.5px;
-    letter-spacing:.06em;
-    text-transform:uppercase;
-    color:var(--muted);
-    margin:0 0 18px;
-    border-bottom:1px solid var(--line);
-    padding-bottom:10px;
+    font-family:"Newsreader",Georgia,serif; font-weight:500; font-size:23px;
+    margin:38px 0 4px; display:flex; align-items:baseline; gap:10px;
   }
-  section{ margin-bottom:52px; }
-
-  .previews{
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
-    gap:16px;
+  h2 .n{font-size:13px;color:var(--accent);font-family:"Work Sans",sans-serif;letter-spacing:1.5px}
+  .lead{color:var(--muted);font-size:14.5px;margin:0 0 16px}
+  .card{
+    background:var(--surface); border:1px solid var(--line); border-radius:12px;
+    padding:18px 20px; margin:12px 0; box-shadow:var(--shadow);
   }
-  .preview{
-    background:var(--surface);
-    border:1px solid var(--line);
-    border-radius:12px;
-    padding:22px;
-    box-shadow:var(--shadow);
-    display:flex;
-    flex-direction:column;
-    gap:12px;
+  .card h3{margin:0 0 4px;font-size:17px;font-weight:600}
+  .card p{margin:0;color:var(--muted);font-size:14.5px}
+  .row{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+  a.btn{
+    display:inline-block; text-decoration:none; font-size:14.5px; font-weight:500;
+    padding:9px 16px; border-radius:9px; border:1px solid var(--line);
+    background:var(--surface-2); color:var(--ink); transition:.15s;
   }
-  .preview .tag{
-    font-family:"JetBrains Mono", ui-monospace, monospace;
-    font-size:11px;
-    letter-spacing:.04em;
-    color:var(--accent-ink);
-    background:color-mix(in srgb, var(--accent) 14%, var(--surface));
-    padding:3px 10px;
-    border-radius:999px;
-    width:fit-content;
+  a.btn:hover{border-color:var(--accent);color:var(--accent-ink)}
+  a.btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+  a.btn.primary:hover{opacity:.88;color:#fff}
+  table{width:100%;border-collapse:collapse;margin-top:8px;font-size:14.5px}
+  td{padding:9px 0;border-bottom:1px solid var(--line);vertical-align:top}
+  td.ep{width:74px;color:var(--accent);font-weight:600;white-space:nowrap}
+  td.len{width:64px;color:var(--muted);text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+  tr:last-child td{border-bottom:none}
+  .sub{color:var(--muted);font-size:13px;margin-top:3px}
+  .feed{
+    background:var(--surface-2); border:1px solid var(--line); border-radius:10px;
+    padding:13px 16px; margin-top:14px; font-size:13.5px; color:var(--muted);
   }
-  .preview h3{
-    font-family:"Newsreader", Georgia, serif;
-    font-style:italic;
-    font-weight:500;
-    font-size:20px;
-    margin:0;
+  .feed code{
+    display:block; margin-top:5px; padding:8px 10px; background:var(--surface);
+    border:1px solid var(--line); border-radius:7px; font-size:12.5px;
+    color:var(--ink); word-break:break-all; font-family:ui-monospace,monospace;
   }
-  .preview p{
-    margin:0;
-    color:var(--muted);
-    font-size:14.5px;
-  }
-  .preview .meta{
-    font-family:"JetBrains Mono", ui-monospace, monospace;
-    font-size:11.5px;
-    color:var(--muted);
-    border-top:1px dashed var(--line);
-    padding-top:12px;
-    margin-top:auto;
-  }
-
-  footer{
-    border-top:1px solid var(--line);
-    padding-top:22px;
-    color:var(--muted);
-    font-size:13px;
-    font-family:"JetBrains Mono", ui-monospace, monospace;
-  }
-  code{
-    font-family:"JetBrains Mono", ui-monospace, monospace;
-    background:var(--surface-2);
-    padding:2px 6px;
-    border-radius:5px;
-    font-size:12px;
-  }
-  audio{ border-radius:8px; }
-
-  @media (prefers-reduced-motion: reduce){ *{ transition:none !important; } }
+  footer{margin-top:54px;padding-top:20px;border-top:1px solid var(--line);
+    color:var(--muted);font-size:13px}
 </style>
 </head>
 <body>
 <div class="wrap">
 
-  <p class="eyebrow">candice.個人網站 · 測試版</p>
-  <h1>這裡是 Candice 的地方</h1>
-  <p class="lede">這個網頁還沒決定好正式要做什麼——可能是<strong>日記</strong>，可能是<strong>教材</strong>，可能兩者都是。先把「網站蓋得起來、外面也連得到」這件事確認好，之後內容隨時可以換。</p>
+<header>
+  <h1>Candice</h1>
+  <div class="tag">國文教學 · 講義與 podcast</div>
+</header>
 
-  <p class="status">正式上線 · 手機、其他電腦都能打開這個網址</p>
+<h2><span class="n">01</span>先秦諸子與九流十家</h2>
+<p class="lead">高中國文／中國文化基本教材。涵蓋韓非、九流十家、諸子典籍、老莊比較、子學流變（漢→清）、先秦文學，以及可獨立成課的諸子寓言單元。</p>
 
-  <section aria-labelledby="preview-heading">
-    <h2 id="preview-heading">之後可能長這樣</h2>
-    <div class="previews">
-      <article class="preview">
-        <span class="tag">如果拿來寫日記</span>
-        <h3>9 月的第一場雨</h3>
-        <p>今天終於把工作台架起來了，感覺像是把腦袋裡亂亂的東西找到一個地方放。</p>
-        <p class="meta">2026-09-06 · 僅示意，非真實日記內容</p>
-      </article>
-      <article class="preview">
-        <span class="tag">如果拿來放教材</span>
-        <h3>第三週：函式與模組</h3>
-        <p>這週的重點是把重複的程式碼包成函式。附件裡有練習題，交作業請填下面的表單。</p>
-        <p class="meta">Week 3 · 僅示意，非真實課程內容</p>
-      </article>
-    </div>
-  </section>
+<div class="card">
+  <h3>學生版重點整理</h3>
+  <p>18 頁。大標題＋小重點＋表格，考前速記用。</p>
+  <div class="row">
+    <a class="btn primary" href="zhuzi-revision.pdf">下載 PDF</a>
+  </div>
+</div>
 
-  <section aria-labelledby="podcast-heading">
-    <h2 id="podcast-heading">Podcast · 測試版</h2>
-    <article class="preview">
-      <span class="tag">EP01 · 測試集數</span>
-      <h3>證明流程能跑通的第一集</h3>
-      <p>文字先變成語音，再包成一個 podcast 節目——這一集就是這條路已經打通的證明。</p>
-      <audio controls style="width:100%; margin-top:4px;" src="podcast/episode-001.mp3"></audio>
-      <p class="meta">訂閱網址：<code>https://chouhua1224.github.io/candice-site/podcast.xml</code>，貼到任何 podcast App 的「透過網址加入」</p>
-    </article>
-  </section>
+<div class="card">
+  <h3>教師手冊</h3>
+  <p>25 頁。以學生版為底稿、位置完全對應，另加完整故事、原文引證與翻譯、課堂提問，並標註對應的 podcast 時間點。</p>
+  <div class="row">
+    <a class="btn" href="zhuzi-teacher.pdf">下載 PDF</a>
+  </div>
+</div>
 
-  <footer>
-    這個頁面放在 <code>github.com/chouhua1224/candice-site</code>，由 GitHub Pages 對外提供服務，不需要這台電腦開機。想換內容的時候，改這個 repo 裡的檔案、推上去就會自動更新。
-  </footer>
+<h2><span class="n">02</span>Podcast</h2>
+<p class="lead">每一集都有章節標記，可以直接跳到想聽的段落。</p>
+
+<table>
+  <tr>
+    <td class="ep">EP08</td>
+    <td><a href="podcast/episode-008.mp3" style="color:inherit">諸子寓言</a>
+      <div class="sub">獨立單元，搭配《韓非子‧外儲說》</div></td>
+    <td class="len">19:53</td>
+  </tr>
+  <tr>
+    <td class="ep">EP07</td>
+    <td><a href="podcast/episode-007.mp3" style="color:inherit">子學流變與先秦文學</a>
+      <div class="sub">漢朝儒學 → 魏晉玄學 → 宋明理學 → 清朝樸學</div></td>
+    <td class="len">28:22</td>
+  </tr>
+  <tr>
+    <td class="ep">EP06</td>
+    <td><a href="podcast/episode-006.mp3" style="color:inherit">典籍、作家與老莊比較</a>
+      <div class="sub">篇數起訖、作家小傳、兩篇選文</div></td>
+    <td class="len">26:35</td>
+  </tr>
+  <tr>
+    <td class="ep">EP05</td>
+    <td><a href="podcast/episode-005.mp3" style="color:inherit">韓非與九流十家</a>
+      <div class="sub">法術勢、常考成語、十家框架</div></td>
+    <td class="len">36:24</td>
+  </tr>
+  <tr>
+    <td class="ep">EP04</td>
+    <td><a href="podcast/episode-004.mp3" style="color:inherit">九流十家：韓非的位置</a></td>
+    <td class="len">44:52</td>
+  </tr>
+  <tr>
+    <td class="ep">EP03</td>
+    <td><a href="podcast/episode-003.mp3" style="color:inherit">韓非子：口吃的天才與同窗的背叛</a></td>
+    <td class="len">07:52</td>
+  </tr>
+</table>
+
+<div class="feed">
+  想在 podcast App 裡訂閱（有新集數會自動更新），把這個網址貼到「透過網址加入」：
+  <code>https://chouhua1224.github.io/candice-site/podcast.xml</code>
+</div>
+
+<footer>
+  網站由 GitHub Pages 提供服務，不需要家裡的電腦開機。<br>
+  內容更新於 2026-09-25。
+</footer>
 
 </div>
 </body>
