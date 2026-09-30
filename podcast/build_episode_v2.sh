@@ -15,6 +15,30 @@ mkfifo_sil 0.60 sil_unit.mp3    # 停頓單元之間
 mkfifo_sil 1.20 sil_para.mp3    # 段落之間
 mkfifo_sil 1.60 sil_chap.mp3    # 章節之間
 
+# 0. 清除會被唸出來的符號（Markdown 等）——edge-tts 會把 * 唸成「星號」
+python3 - "$SCRIPT" <<'CLEANEOF'
+import re,sys,shutil
+p=sys.argv[1]
+raw=open(p,encoding='utf-8').read()
+t=raw
+t=re.sub(r'\*\*(.+?)\*\*', r'\1', t, flags=re.S)   # **粗體** → 粗體
+t=re.sub(r'(?<!\w)\*(.+?)\*(?!\w)', r'\1', t, flags=re.S)  # *斜體* → 斜體
+t=re.sub(r'`([^`]*)`', r'\1', t)                  # `code`
+t=re.sub(r'\[([^\]]*)\]\([^)]*\)', r'\1', t)     # [文字](網址)
+t=re.sub(r'^\s{0,3}#{1,6}\s*', '', t, flags=re.M) # 標題 #
+t=re.sub(r'^\s{0,3}>\s?', '', t, flags=re.M)      # 引用 >
+t=re.sub(r'^\s*[-–—]{3,}\s*$', '', t, flags=re.M) # 分隔線
+t=re.sub(r'[*#`_~|\\]', '', t)                    # 殘留符號
+t=re.sub(r'[ \t]+\n', '\n', t)
+removed=sum(raw.count(c) for c in '*#`_~|')
+if removed:
+    shutil.copy(p, p+'.orig')
+    open(p,'w',encoding='utf-8').write(t)
+    print(f'  已清除 {removed} 個會被唸出來的符號（原稿備份為 .orig）')
+else:
+    print('  稿件無需清理')
+CLEANEOF
+
 # 1. 切章 → 切停頓單元
 python3 - "$SCRIPT" <<'PYEOF'
 import re,sys,json
